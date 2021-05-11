@@ -17,6 +17,8 @@ RUN /sbin/useradd app;cd /etc/systemd/system/multi-user.target.wants; \
 
 COPY index.html /usr/share/novnc
 
+COPY yum/yum-cron.conf /etc/yum/yum-cron.conf
+
 # Define working directory.
 WORKDIR /tmp
 
