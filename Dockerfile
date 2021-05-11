@@ -6,7 +6,7 @@ COPY system /etc/systemd/system/
 COPY yum/google-chrome.repo /etc/yum.repos.d/
 
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm; yum -y update all; \
-    yum -y install tigervnc-server-minimal novnc google-chrome-stable alsa-firmware alsa-lib alsa-tools-firmware; \
+    yum -y install yum-cron tigervnc-server-minimal novnc google-chrome-stable alsa-firmware alsa-lib alsa-tools-firmware; \
     yum -y clean all; rm -rf /var/tmp/* /tmp/* /var/cache/yum/*
 
 RUN /sbin/useradd app;cd /etc/systemd/system/multi-user.target.wants; \
